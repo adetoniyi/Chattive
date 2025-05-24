@@ -3,7 +3,7 @@ A CHATTERBOX:
 **A SOCIAL MEDIA FULL-FEATURE API PROJECT**
 
 **PROJECT AUTHOR ADENIYI PELUMI **
-**Date: 24th of May, 2025 ****
+**Date: 24th of May, 2025 **
 
 **Tech Stack**
 •	Backend Framework: Node.js (with Express) with Javascript 
