@@ -2,9 +2,9 @@
 
 ### **A CHATTERBOX: A SOCIAL MEDIA FULL-FEATURE API PROJECT**
 
-### **PROJECT AUTHOR ADENIYI PELUMI **
+### **PROJECT AUTHOR ADENIYI PELUMI**
 
-### **Date: 24th of May, 2025 **
+### **Date: 24th of May, 2025**
 
 ### **Tech Stack**
 
@@ -17,7 +17,7 @@
 
 ### **Features & Requirement**
 
-1. Authentication & Authorization
+### **1. Authentication & Authorization**
 •	User Registration – Email/Username & password registration.
 •	Login – User authentication with JWT.
 •	Password Reset – Feature to request and reset forgotten password.
@@ -27,14 +27,14 @@
 -	Admin – Limited to approved team members
 •	Access Control Middleware – Protect routes based on roles (isAdmin, isAuthenticated)
 
-2. User Profile
+### ** 2.User Profile**
 •	Profile Creation & Update – Users can update name, bio, avatar, etc.
 •	Profile Picture Upload – Handled with Cloudinary.
 •	Follow/Unfollow Users – Social interaction between users.
 •	User Search – Search users by username, name, or email.
 •	View Public Profiles – Accessible by other users.
 
-3. Posts
+### **3. Posts**
 •	Create Posts – Text and optional media (images/videos).
 •	Edit Posts – Users can edit their own posts.
 •	Delete Posts – Users can delete their own posts.
