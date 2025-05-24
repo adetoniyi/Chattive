@@ -1,20 +1,22 @@
-**# Chattive
-A CHATTERBOX: 
-**A SOCIAL MEDIA FULL-FEATURE API PROJECT**
+# Chattive
 
-**PROJECT AUTHOR ADENIYI PELUMI **
-**Date: 24th of May, 2025 **
+### **A CHATTERBOX: A SOCIAL MEDIA FULL-FEATURE API PROJECT**
 
-**Tech Stack**
-•	Backend Framework: Node.js (with Express) with Javascript 
-•	Database: MongoDB (local or MongoDB Atlas)
-•	ORM: Mongoose
-•	Authentication: JSON Web Tokens (JWT)
-•	File Storage: Cloudinary (for profile pictures and media uploads)
-•	API Documentation: Swagger
+### **PROJECT AUTHOR ADENIYI PELUMI **
 
+### **Date: 24th of May, 2025 **
 
-**Features & Requirement** 
+### **Tech Stack**
+
+- **Backend Framework:** Node.js (with Express) with Javascript
+- **Database:** MongoDB (local or MongoDB Atlas)
+- **ORM:** Mongoose
+- **Authentication:** JSON Web Tokens (JWT)
+- **File Storage:** Cloudinary (for profile pictures and media uploads)
+- **API Documentation:** Swagger
+
+### **Features & Requirement**
+
 1. Authentication & Authorization
 •	User Registration – Email/Username & password registration.
 •	Login – User authentication with JWT.
