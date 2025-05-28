@@ -38,7 +38,7 @@ function asyncHandler(
 
 /**
  * @swagger
- * /posts:
+ * /api/posts:
  *   post:
  *     summary: Create a new post
  *     tags: [Posts]
@@ -59,6 +59,8 @@ function asyncHandler(
  *     responses:
  *       201:
  *         description: Post created successfully
+ *       404:
+ *         description: Post not found
  */
 router.post(
   "/",
@@ -69,7 +71,7 @@ router.post(
 
 /**
  * @swagger
- * /posts/feed:
+ * /api/posts/feed:
  *   get:
  *     summary: Get paginated feed of posts
  *     tags: [Posts]
@@ -84,12 +86,14 @@ router.post(
  *     responses:
  *       200:
  *         description: List of feed posts
+ *       404:
+ *         description: Post not found
  */
 router.get("/feed", asyncHandler(isAuthenticated), getFeed);
 
 /**
  * @swagger
- * /posts/{id}:
+ * /api/posts/{id}:
  *   get:
  *     summary: Get a specific post by ID
  *     tags: [Posts]
@@ -111,7 +115,7 @@ router.get("/:id", asyncHandler(isAuthenticated), asyncHandler(getPost));
 
 /**
  * @swagger
- * /posts/{id}:
+ * /api/posts/{id}:
  *   put:
  *     summary: Update a post
  *     tags: [Posts]
@@ -142,7 +146,7 @@ router.put("/:id", asyncHandler(isAuthenticated), asyncHandler(updatePost));
 
 /**
  * @swagger
- * /posts/{id}:
+ * /api/posts/{id}:
  *   delete:
  *     summary: Delete a post
  *     tags: [Posts]
@@ -164,7 +168,7 @@ router.delete("/:id", asyncHandler(isAuthenticated), asyncHandler(deletePost));
 
 /**
  * @swagger
- * /posts/{id}/like:
+ * /api/posts/{id}/like:
  *   post:
  *     summary: Like or unlike a post
  *     tags: [Posts]
@@ -179,6 +183,8 @@ router.delete("/:id", asyncHandler(isAuthenticated), asyncHandler(deletePost));
  *     responses:
  *       200:
  *         description: Toggled like on post
+ *       403:
+ *         description: Unauthorized or not found
  */
 router.post("/:id/like", asyncHandler(isAuthenticated), likeOrUnlikePost);
 

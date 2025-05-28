@@ -34,7 +34,7 @@ function asyncHandler(
 
 /**
  * @swagger
- * /messages:
+ * /api/messages:
  *   post:
  *     summary: Send a message
  *     tags: [Messages]
@@ -59,12 +59,14 @@ function asyncHandler(
  *     responses:
  *       201:
  *         description: Message sent
+ *       400:
+ *         description: Bad request, missing fields or invalid data
  */
 router.post("/", asyncHandler(isAuthenticated), sendMessage);
 
 /**
  * @swagger
- * /messages/conversations:
+ * /api/messages/conversations:
  *   get:
  *     summary: Get all conversations for the authenticated user
  *     tags: [Messages]
@@ -73,6 +75,8 @@ router.post("/", asyncHandler(isAuthenticated), sendMessage);
  *     responses:
  *       200:
  *         description: List of conversations
+ *       400:
+ *         description: Bad request, missing fields or invalid data
  */
 router.get(
   "/conversations",
@@ -82,7 +86,7 @@ router.get(
 
 /**
  * @swagger
- * /messages/conversations/{userId}:
+ * /api/messages/conversations/{userId}:
  *   get:
  *     summary: Get conversation between authenticated user and another user
  *     tags: [Messages]
@@ -98,6 +102,8 @@ router.get(
  *     responses:
  *       200:
  *         description: Conversation data
+ *       400:
+ *         description: Bad request, missing fields or invalid data
  */
 router.get(
   "/conversations/:userId",
@@ -107,7 +113,7 @@ router.get(
 
 /**
  * @swagger
- * /messages/{messageId}:
+ * /api/messages/{messageId}:
  *   delete:
  *     summary: Delete a message
  *     tags: [Messages]

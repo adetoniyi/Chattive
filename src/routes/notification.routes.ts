@@ -33,7 +33,7 @@ function asyncHandler(
 
 /**
  * @swagger
- * /notifications:
+ * /api/notifications:
  *   get:
  *     summary: Get all notifications for the authenticated user
  *     tags: [Notifications]
@@ -42,6 +42,8 @@ function asyncHandler(
  *     responses:
  *       200:
  *         description: A list of notifications
+ *       400:
+ *         description: Bad request
  */
 router.get("/", asyncHandler(isAuthenticated), getNotifications);
 
@@ -63,6 +65,8 @@ router.get("/", asyncHandler(isAuthenticated), getNotifications);
  *     responses:
  *       200:
  *         description: Notification marked as read
+ *       400:
+ *         description: Bad request, invalid ID or notification not found
  */
 router.patch(
   "/:id/read",
@@ -81,6 +85,8 @@ router.patch(
  *     responses:
  *       200:
  *         description: All notifications marked as read
+ *       400:
+ *         description: Bad request, unable to mark notifications as read
  */
 router.patch(
   "/read-all",

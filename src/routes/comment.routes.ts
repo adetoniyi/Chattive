@@ -34,7 +34,7 @@ function asyncHandler(
 
 /**
  * @swagger
- * /comments/{postId}:
+ * /api/comments/{postId}:
  *   post:
  *     summary: Add a comment to a post
  *     tags: [Comments]
@@ -62,6 +62,8 @@ function asyncHandler(
  *     responses:
  *       201:
  *         description: Comment added successfully
+ *       403:
+ *         description: Unauthorized or post not found
  */
 router.post(
   "/:postId",
@@ -71,7 +73,7 @@ router.post(
 
 /**
  * @swagger
- * /comments/{postId}:
+ * /api/comments/{postId}:
  *   get:
  *     summary: Get comments for a post
  *     tags: [Comments]
@@ -85,12 +87,14 @@ router.post(
  *     responses:
  *       200:
  *         description: List of comments
+ *       404:
+ *         description: Post not found or no comments available
  */
 router.get("/:postId", asyncHandler(getPostComments));
 
 /**
  * @swagger
- * /comments/{id}:
+ * /api/comments/{id}:
  *   put:
  *     summary: Update a comment
  *     tags: [Comments]
@@ -122,7 +126,7 @@ router.put("/:id", asyncHandler(isAuthenticated), asyncHandler(updateComment));
 
 /**
  * @swagger
- * /comments/{id}:
+ * /api/comments/{id}:
  *   delete:
  *     summary: Delete a comment
  *     tags: [Comments]

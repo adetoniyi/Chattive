@@ -12,19 +12,21 @@ const router = express.Router();
 
 /**
  * @swagger
- * /admin/users:
+ * /api/admin/users:
  *   get:
  *     summary: Get all users
  *     tags: [Admin]
  *     responses:
  *       200:
  *         description: List of users
+ *       400:
+ *         description: Bad request
  */
 router.get("/users", adminController.getAllUsers);
 
 /**
  * @swagger
- * /admin/users/{userId}/ban:
+ * /api/admin/users/{userId}/ban:
  *   patch:
  *     summary: Ban or unban a user
  *     tags: [Admin]
@@ -49,12 +51,14 @@ router.get("/users", adminController.getAllUsers);
  *     responses:
  *       200:
  *         description: Ban status updated
+ *       400:
+ *         description: Bad request
  */
 router.patch("/users/:userId/ban", adminController.toggleUserBan);
 
 /**
  * @swagger
- * /admin/users/{userId}/admin:
+ * /api/admin/users/{userId}/admin:
  *   patch:
  *     summary: Promote or demote a user to/from admin
  *     tags: [Admin]
@@ -79,12 +83,14 @@ router.patch("/users/:userId/ban", adminController.toggleUserBan);
  *     responses:
  *       200:
  *         description: Admin role updated
+ *       400:
+ *         description: Bad request
  */
 router.patch("/users/:userId/admin", adminController.toggleAdmin);
 
 /**
  * @swagger
- * /admin/users/{userId}/logs:
+ * /api/admin/users/{userId}/logs:
  *   get:
  *     summary: Get activity logs for a user
  *     tags: [Admin]
@@ -98,36 +104,43 @@ router.patch("/users/:userId/admin", adminController.toggleAdmin);
  *     responses:
  *       200:
  *         description: User activity logs retrieved
+ *       400:
+ *         description: Bad request
  */
 router.get("/users/:userId/logs", adminController.getUserLogs);
 
 /**
  * @swagger
- * /admin/posts:
+ * /api/admin/posts:
  *   get:
  *     summary: Get all posts
  *     tags: [Admin]
  *     responses:
  *       200:
  *         description: List of all posts
+ *       400:
+ *         description: Bad request
+
  */
 router.get("/posts", adminController.getAllPosts);
 
 /**
  * @swagger
- * /admin/comments:
+ * /api/admin/comments:
  *   get:
  *     summary: Get all comments
  *     tags: [Admin]
  *     responses:
  *       200:
  *         description: List of all comments
+ *       400:
+ *         description: Bad request
  */
 router.get("/comments", adminController.getAllComments);
 
 /**
  * @swagger
- * /admin/posts/{postId}:
+ * /api/admin/posts/{postId}:
  *   delete:
  *     summary: Delete a post
  *     tags: [Admin]
@@ -141,12 +154,14 @@ router.get("/comments", adminController.getAllComments);
  *     responses:
  *       200:
  *         description: Post deleted successfully
+ *       400:
+ *         description: Bad request
  */
 router.delete("/posts/:postId", adminController.removePost);
 
 /**
  * @swagger
- * /admin/comments/{commentId}:
+ * /api/admin/comments/{commentId}:
  *   delete:
  *     summary: Delete a comment
  *     tags: [Admin]
@@ -160,30 +175,35 @@ router.delete("/posts/:postId", adminController.removePost);
  *     responses:
  *       200:
  *         description: Comment deleted successfully
- */
+ *       400:
+ *         description: Bad request
 router.delete("/comments/:commentId", adminController.removeComment);
 
 /**
  * @swagger
- * /admin/stats:
+ * /api/admin/stats:
  *   get:
  *     summary: Get dashboard statistics
  *     tags: [Admin]
  *     responses:
  *       200:
  *         description: Dashboard stats retrieved
+ *       400:
+ *         description: Bad request
  */
 router.get("/stats", adminController.getDashboardStats);
 
 /**
  * @swagger
- * /admin/team:
+ * /api/admin/team:
  *   get:
  *     summary: Get all admin team members
  *     tags: [Admin]
  *     responses:
  *       200:
  *         description: Admin team members retrieved
+ *       400:
+ *         description: Bad request
  */
 router.get("/team", adminController.getTeam);
 

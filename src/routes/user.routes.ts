@@ -34,7 +34,7 @@ function asyncHandler(
 
 /**
  * @swagger
- * /users/profile:
+ * /api/users/profile:
  *   get:
  *     summary: Get the authenticated user's profile
  *     tags: [Users]
@@ -48,7 +48,7 @@ router.get("/profile", asyncHandler(isAuthenticated), getProfile);
 
 /**
  * @swagger
- * /users/profile:
+ * /api/users/profile:
  *   put:
  *     summary: Update the authenticated user's profile
  *     tags: [Users]
@@ -70,6 +70,8 @@ router.get("/profile", asyncHandler(isAuthenticated), getProfile);
  *     responses:
  *       200:
  *         description: Profile updated successfully
+ *       400:
+ *         description: Bad request, invalid data
  */
 router.put(
   "/profile",
@@ -80,7 +82,7 @@ router.put(
 
 /**
  * @swagger
- * /users/{userId}/follow:
+ * /api/users/{userId}/follow:
  *   post:
  *     summary: Follow another user
  *     tags: [Users]
@@ -95,12 +97,14 @@ router.put(
  *     responses:
  *       200:
  *         description: User followed
+ *       400:
+ *         description: Bad request, invalid data
  */
 router.post("/:userId/follow", asyncHandler(isAuthenticated), followUser);
 
 /**
  * @swagger
- * /users/{userId}/unfollow:
+ * /api/users/{userId}/unfollow:
  *   post:
  *     summary: Unfollow a user
  *     tags: [Users]
@@ -115,6 +119,8 @@ router.post("/:userId/follow", asyncHandler(isAuthenticated), followUser);
  *     responses:
  *       200:
  *         description: User unfollowed
+ *       400:
+ *         description: Bad request, invalid data
  */
 router.post("/:userId/unfollow", asyncHandler(isAuthenticated), unfollowUser);
 
