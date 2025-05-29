@@ -1,4 +1,4 @@
-# Chattive
+# Echnlynk
 
 ### **A CHATTERBOX: A SOCIAL MEDIA FULL-FEATURE API PROJECT**
 
