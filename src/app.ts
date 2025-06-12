@@ -70,7 +70,7 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
 
 // Health check
 app.get("/", (_req: Request, res: Response) => {
-  res.send("CHATTIVE API is running 🚀");
+  res.send("ECHOLYNK API is running 🚀");
 });
 
 connectDB();
